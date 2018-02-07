@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
 class FormSetting extends Component {
-    constructor(props){
-        super(props)
-        }
   
   
 handleSelectVal = (e) => {
             this.props.handleSelect({categoryCode:e.target.value})
+            
           }
   
 handleSelectDiff = (e) => {
             this.props.handleSelect({difficulty:e.target.value})
+
+
 }
 
   render() {
@@ -26,8 +26,8 @@ handleSelectDiff = (e) => {
         <option value="11">Film</option>
         <option value="21" >Sports</option>
         <option value="24" >Politics</option>
-        <option value="23" selected>History</option>
-        <option value="22" selected>Geography</option>
+        <option value="23" >History</option>
+        <option value="22" >Geography</option>
       </select>
       </div>
       <div>
