@@ -13,6 +13,11 @@ export default class Game extends Component {
             questions:[]
         }
     }
+
+    // componentDidMount(){
+    //     getQuestionsApi(this.props.category, this.props.difficulty);
+    // }
+
     getQuestionsApi(category, difficulty){
 
         var url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
@@ -34,8 +39,8 @@ export default class Game extends Component {
     renderQnA() {
         return(
             <div> 
-            <QuestionBox/>
-            <AnswerBox/>
+            <QuestionBox questions={this.state.questions}/>
+            
             </div>
         )
     }
