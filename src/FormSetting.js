@@ -1,44 +1,46 @@
 import React, { Component } from 'react';
 
 class FormSetting extends Component {
-  
+constructor(props){
+  super(props);
+  this.state = {category: '', difficulty: ''}
+  this.startGame = this.startGame.bind(this);
+}
   
 handleSelectVal = (e) => {
-            this.props.handleSelect({categoryCode:e.target.value})
-            
+            this.setState({[e.target.name]:e.target.value})
           }
   
 handleSelectDiff = (e) => {
-            this.props.handleSelect({difficulty:e.target.value})
-
-
+            this.setState({[e.target.name]:e.target.value})
 }
 
+startGame() {
+  this.props.handleSelect(this.state);
+  
+}
   render() {
     return (
-      <div className="setting">
-      <div className="Category" >
+      <form>
       Category:
       <select onChange={this.handleSelectVal}>
-        <option value="9" >General knowledge</option>
-        <option value="12">Music</option>
-        <option value="14">Television</option>
-        <option value="11">Film</option>
-        <option value="21" >Sports</option>
-        <option value="24" >Politics</option>
-        <option value="23" >History</option>
-        <option value="22" >Geography</option>
+        <option value="9" name="category">General knowledge</option>
+        <option value="12" name="category">Music</option>
+        <option value="14" name="category">Television</option>
+        <option value="11" name="category">Film</option>
+        <option value="21" name="category">Sports</option>
+        <option value="24" name="category">Politics</option>
+        <option value="23" name="category">History</option>
+        <option value="22" name="category">Geography</option>
       </select>
-      </div>
-      <div>
         Difficulty:
         <select onChange={this.handleSelectDiff}>
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
+        <option value="Easy" name="difficulty">Easy</option>
+        <option value="Medium" name="difficulty">Medium</option>
+        <option value="Hard" name="difficulty">Hard</option>
       </select>
-      </div>
-      </div>
+      <button type="submit" onClick={this.startGame}>Start Game</button>
+      </form>
     );
   }
 }
