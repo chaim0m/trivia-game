@@ -4,11 +4,10 @@ export default class QuestionBox extends Component {
     render(){
         return (
             <div>
-            <span className="questionbox">
-              this.props.questions.map((ans, index)=><div className="answers" item={ans} key={index}>{ans}</div>);
-
-                {this.props.question}  <img src="https://image.flaticon.com/icons/png/512/36/36601.png" alt="question mark"/>
+            <span>
+                {this.props.item.question}
             </span>
+            <AnswerBox correct={this.props.item.correct_answer} incorrect={this.props.item.incorrect_answers}/>
             </div>
         )
     }
