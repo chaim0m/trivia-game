@@ -6,8 +6,9 @@ export default class AnswerBox extends Component {
         this.renderAns=this.renderAns.bind(this)
     }
     renderAns(){
-        this.props.incorrect_answers.map((ans, index)=><div className="answers" key={index}>{ans}</div>);
-        <div className="answers">{this.props.correct_answer}</div>
+        return   this.props.incorrect_answers.map((ans, index)=><div className="answers" key={index}>{ans}</div>);
+        // <div className="answers">{this.props.correct_answer}</div>
+        
     }
     render(){
         return (
@@ -19,6 +20,7 @@ export default class AnswerBox extends Component {
         )
     }
 }
+
 
 
 

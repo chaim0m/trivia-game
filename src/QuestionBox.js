@@ -5,7 +5,7 @@ export default class QuestionBox extends Component {
         return (
             <div>
             <span className="questionbox">
-                {this.props.question}  <img src="https://image.flaticon.com/icons/png/512/36/36601.png"/>
+                {this.props.question}  <img src="https://image.flaticon.com/icons/png/512/36/36601.png" alt="question mark"/>
             </span>
             </div>
         )

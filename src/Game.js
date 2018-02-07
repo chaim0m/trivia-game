@@ -20,19 +20,24 @@ export default class Game extends Component {
         axios.get(url)
         .then(questions => {
             console.log(questions);
+            // let answers = questions.data.incorrect_answers;
+            // let temp = 
             this.setState({questions: questions});
         })
+
+        
         .catch(error => {
             console.log('Nope it aint workin', error);
         });
     }
+    
     renderQnA() {
-        return
-        <div> 
-        <QuestionBox/>
-        <AnswerBox/>
-        </div>
-
+        return(
+            <div> 
+            <QuestionBox/>
+            <AnswerBox/>
+            </div>
+        )
     }
     render(){
         this.getQuestionsApi(this.props.category, this.props.difficulty)
