@@ -31,8 +31,8 @@ export default class Game extends Component {
         }
     }
 
-    handleAnswer(status) {
-        
+    handleAnswer(question) {
+
     }
 
 

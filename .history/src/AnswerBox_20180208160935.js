@@ -7,16 +7,9 @@ export default class AnswerBox extends Component {
         this.shuffle = this.shuffle.bind(this)
     }
 
-    handleClick(e) {
-        console.log(e.target);
-        if (e.target.item.isCorrect){
-            e.target.className = "hex-option border green"
-        } else {
-            e.target.className = "hex-option border red"
-        }
-        this.props.handleClick(e.target.item.isCorrect)
-    }
+    handleClick() {
 
+    }
     componentDidMount() {
 /*         let shuffled = this.shuffle(this.props.answers)
         this.setState({ answers: shuffled }); */
@@ -42,14 +35,14 @@ export default class AnswerBox extends Component {
             <div className="answer-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" item={this.props.answers[0]} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[0].value }} />
-                        <div className="hex-option border" item={this.props.answers[1]} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[1].value }} />
+                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[0].value }} />
+                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[1].value }} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" item={this.props.answers[2]} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[2].value }} />
-                        <div className="hex-option border" item={this.props.answers[3]} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[3].value }} />
+                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[2].value }} />
+                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[3].value }} />
                     </div>
                 </div>
             </div>

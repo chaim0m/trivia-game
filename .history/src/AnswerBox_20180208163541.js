@@ -8,7 +8,8 @@ export default class AnswerBox extends Component {
     }
 
     handleClick(e) {
-        console.log(e.target);
+        console.log(e.target.item);
+        console.log(JSON.parse(e.target.item));
         if (e.target.item.isCorrect){
             e.target.className = "hex-option border green"
         } else {
@@ -42,7 +43,7 @@ export default class AnswerBox extends Component {
             <div className="answer-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" item={this.props.answers[0]} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[0].value }} />
+                        <div className="hex-option border" item={this.props.answers[0].isCorrect} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[0].value }} />
                         <div className="hex-option border" item={this.props.answers[1]} onClick={this.handleClick} dangerouslySetInnerHTML={{ __html: this.props.answers[1].value }} />
                     </div>
                 </div>

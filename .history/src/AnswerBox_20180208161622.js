@@ -7,16 +7,9 @@ export default class AnswerBox extends Component {
         this.shuffle = this.shuffle.bind(this)
     }
 
-    handleClick(e) {
-        console.log(e.target);
-        if (e.target.item.isCorrect){
-            e.target.className = "hex-option border green"
-        } else {
-            e.target.className = "hex-option border red"
-        }
-        this.props.handleClick(e.target.item.isCorrect)
-    }
+    handleClick() {
 
+    }
     componentDidMount() {
 /*         let shuffled = this.shuffle(this.props.answers)
         this.setState({ answers: shuffled }); */

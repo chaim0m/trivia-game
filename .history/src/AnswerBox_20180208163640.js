@@ -8,7 +8,7 @@ export default class AnswerBox extends Component {
     }
 
     handleClick(e) {
-        console.log(e.target);
+        console.log(e.target.item.toString());
         if (e.target.item.isCorrect){
             e.target.className = "hex-option border green"
         } else {
