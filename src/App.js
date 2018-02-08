@@ -24,6 +24,7 @@ class App extends Component {
         <FormSetting handleSelect={this.handleSelect}/>
         {game}
       </div>
+
     );
   }
 }

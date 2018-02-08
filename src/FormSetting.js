@@ -25,7 +25,10 @@ class FormSetting extends Component {
   render() {
     if (this.state.show){
       return (
-        <form>
+        <form class="formSetting">
+        <div>
+        <h1>Trivia</h1>
+          </div>
           Category:
         <select onChange={this.handleSelectVal}>
             <option>-- Select Category --</option>
