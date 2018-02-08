@@ -3,24 +3,29 @@ import React, { Component } from 'react';
 export default class AnswerBox extends Component {
     constructor(props){
         super(props)
-        this.renderAns=this.renderAns.bind(this)
+        this.concatAns=this.concatAns.bind(this)
         this.state={
-            answers: {correct: {this.props.correct}, incorrect: {this.props.incorrect}}
+            answers: {correct: this.props.correct, incorrect: this.props.incorrect, ans:[]}
         }
     }
-    renderAns(){
-       
-    }
+     conncatAns(){
+         let tempArr = this.state.incorrect;
+         let temp = this.state.correct;
+         tempArr.push(...temp);
+        this.setState({ans: tempArr})
+        return this.state.ans;
+     }  
+    
     render(){
+        this.concatAns()
         return (
-            <div>
-            <span className="answerbox">
-            {this.props.correct}
-            </span>
-            </div>
+            this.state.ans.map((answer, index)=><div item={answer} key={index} index={index}></div>)
         )
     }
 }
+
+
+
 
 
 

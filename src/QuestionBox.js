@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AnswerBox from './AnswerBox.js';
 
 export default class QuestionBox extends Component {
     render(){
