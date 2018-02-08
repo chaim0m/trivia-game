@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 
 export default class AnswerBox extends Component {
     constructor(props) {
-        super(props) ;
+        super(props)
+        this.state = {
+            answers: props.answers
+        }
         this.handleClick = this.handleClick.bind(this)
         this.shuffle = this.shuffle.bind(this)
     }
@@ -30,19 +33,19 @@ export default class AnswerBox extends Component {
 
         return array;
     }
-    render() {debugger;
+    render() {
             return (
             <div className="answer-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html: this.props.answers[0].value}} />
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html:this.props.answers[1].value}} />
+                        <div className="hex-option border" onClick={this.handleClick}>{this.state.answers[0]}</div>
+                        <div className="hex-option border" onClick={this.handleClick}>{this.state.answers[1]}</div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html:this.props.answers[2].value}}/>
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html:this.props.answers[3].value}}/>
+                        <div className="hex-option border" onClick={this.handleClick}>{this.state.answers[2]}</div>
+                        <div className="hex-option border" onClick={this.handleClick}>{this.state.answers[3]}</div>
                     </div>
                 </div>
             </div>

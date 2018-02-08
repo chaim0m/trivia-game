@@ -49,7 +49,6 @@ class FormSetting extends Component {
         </form>
       );
   }
-  return null
 }
 }
 

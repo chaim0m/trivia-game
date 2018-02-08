@@ -35,14 +35,14 @@ export default class AnswerBox extends Component {
             <div className="answer-container">
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html: this.props.answers[0].value}} />
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html:this.props.answers[1].value}} />
+                        <div className="hex-option border" onClick={this.handleClick}>{this.props.answers[0].value}</div>
+                        <div className="hex-option border" onClick={this.handleClick}>{this.props.answers[1].value}</div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-6">
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html:this.props.answers[2].value}}/>
-                        <div className="hex-option border" onClick={this.handleClick} dangerouslySetInnerHTML={{__html:this.props.answers[3].value}}/>
+                        <div className="hex-option border" onClick={this.handleClick}>{this.props.answers[2].value}</div>
+                        <div className="hex-option border" onClick={this.handleClick}>{this.props.answers[3].value}</div>
                     </div>
                 </div>
             </div>

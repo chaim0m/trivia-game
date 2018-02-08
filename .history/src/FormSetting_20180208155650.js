@@ -48,9 +48,8 @@ class FormSetting extends Component {
           <button type="button" onClick={this.startGame}>Start Game</button>
         </form>
       );
+    }
   }
-  return null
-}
 }
 
 export default FormSetting;

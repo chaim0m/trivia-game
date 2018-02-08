@@ -8,7 +8,7 @@ export const QuestionBox = (props) => {
             dangerouslySetInnerHTML={{__html: props.item.question}}>
             </div>
             <div className="answer-container">
-                <AnswerBox handleClick={props.handleAnswer} answers={props.item.answers}/>
+                <AnswerBox handleClick={props.handleAnswer} />
             </div>
         </div>
     )

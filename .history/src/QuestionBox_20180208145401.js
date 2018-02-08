@@ -5,10 +5,10 @@ export const QuestionBox = (props) => {
     return (
         <div className="row">
             <div className="hex-question border" 
-            dangerouslySetInnerHTML={{__html: props.item.question}}>
+            dangerouslySetInnerHTML={{_html: props.item.question}}>
             </div>
             <div className="answer-container">
-                <AnswerBox handleClick={props.handleAnswer} answers={props.item.answers}/>
+                <AnswerBox handleClick={props.handleAnswer} />
             </div>
         </div>
     )

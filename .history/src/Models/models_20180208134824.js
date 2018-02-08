@@ -1,11 +1,11 @@
-class Answer {
+class Answer{
     constructor(value, isCorrect){
         this.value = value;
         this.isCorrect = isCorrect;
     }
 }
 
-class Question {
+class Question{
     constructor(question, inCorrect, correct, display){
         this.question = question;
         this.answers = inCorrect.map((item) =>{
