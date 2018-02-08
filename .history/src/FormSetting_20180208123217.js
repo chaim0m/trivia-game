@@ -17,11 +17,10 @@ class FormSetting extends Component {
     this.setState({ difficulty: event.target.value })
   }
 
-  startGame(e) {
-    
+  startGame() {
     this.props.handleSelect(this.state);
-  }
 
+  }
   render() {
     return (
       <form>
@@ -44,7 +43,7 @@ class FormSetting extends Component {
           <option value="Medium" name="difficulty">Medium</option>
           <option value="Hard" name="difficulty">Hard</option>
         </select>
-        <button type="button" onClick={this.startGame}>Start Game</button>
+        <button type="submit" onClick={this.startGame}>Start Game</button>
       </form>
     );
   }

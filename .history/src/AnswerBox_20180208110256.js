@@ -10,6 +10,7 @@ export default class AnswerBox extends Component {
         }
     }
     handleClick(){
+        props.handleClick
     }
     renderAns(){
        

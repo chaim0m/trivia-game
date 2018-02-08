@@ -11,7 +11,8 @@ export default class Game extends Component {
         this.handleAnswer = this.handleAnswer.bind(this)
         this.showQuestion = this.showQuestion.bind(this)
         this.state={
-            questions: [],
+            selection: {category: props.category, difficulty: props.difficulty},
+            questions:[],
         }
     }
 
@@ -19,6 +20,9 @@ export default class Game extends Component {
     }
     
     componentDidUpdate(prevProps, prevState){
+        if (prevState.selection.category !== this.state.selection.category){
+            this.getQuestionsApi(this.state.selection.category, this.state.selection.difficulty);
+        }
     }
 
     showQuestion() {
@@ -47,12 +51,13 @@ export default class Game extends Component {
         .catch(error => {
             console.log('Nope it aint workin', error);
         });
-    } 
+    }
     
     render(){
+        let selectedQ = this.showQuestion(this.state.questions)
         return (
             <div>
-                <QuestionBox question={this.state.selectedQuestion} handleAnswer={this.handleAnswer}/> 
+                <QuestionBox question={selectedQ} handleAnswer={this.handleAnswer}/> 
             </div>
         )
     }

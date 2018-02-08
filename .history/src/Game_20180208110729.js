@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {QuestionBox} from './QuestionBox.js';
+import QuestionBox from './QuestionBox.js';
 import AnswerBox from './AnswerBox.js';
 import axios from 'axios';
 
@@ -11,17 +11,15 @@ export default class Game extends Component {
         this.handleAnswer = this.handleAnswer.bind(this)
         this.showQuestion = this.showQuestion.bind(this)
         this.state={
-            questions: [],
+            questions:[],
         }
     }
 
     componentDidMount(){
-    }
-    
-    componentDidUpdate(prevProps, prevState){
+        this.getQuestionsApi(this.props.category, this.props.difficulty);
     }
 
-    showQuestion() {
+    componentDidUpdate(){
 
     }
 
@@ -29,6 +27,16 @@ export default class Game extends Component {
 
     }
 
+    showQuestion() {
+        let selectedQ;
+        let questionsArr = this.state.questions
+        for (let question of questionsArr){
+            if (question.displayQ){
+                selectedQ = question;   
+            }
+        }
+        return selectedQ;
+    }
 
     getQuestionsApi(category, difficulty){
 
@@ -36,8 +44,7 @@ export default class Game extends Component {
     
         axios.get(url)
         .then(response => {
-            console.log(response)
-            let questions = response.data.results;
+            let questions = response;
             questions.forEach((item) => {
                 item.displayQ = false
             });
@@ -47,12 +54,13 @@ export default class Game extends Component {
         .catch(error => {
             console.log('Nope it aint workin', error);
         });
-    } 
+    }
     
     render(){
+        let selectedQ = this.showQuestion();
         return (
             <div>
-                <QuestionBox question={this.state.selectedQuestion} handleAnswer={this.handleAnswer}/> 
+                <QuestionBox question={selectedQ} handleAnswer={this.handleAnswer}/> 
             </div>
         )
     }

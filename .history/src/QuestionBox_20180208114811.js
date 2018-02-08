@@ -8,10 +8,9 @@ export const QuestionBox = (props) => {
                 {props.question}
             </div>
             <div className="answer-container">
-                <AnswerBox handleClick={props.handleAnswer} />
+                <AnswerBox {/* correct={props.question.correct_answer} incorrect={props.question.incorrect_answers} */} handleClick={props.handleAnswer} />
             </div>
         </div>
     )
 }
 
-{/* correct={props.question.correct_answer} incorrect={props.question.incorrect_answers} */}

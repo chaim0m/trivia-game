@@ -8,7 +8,7 @@ import FormSetting from './FormSetting';
 class App extends Component {
   constructor(props){
     super(props)
-    this.state ={category:null, difficulty:null}
+    this.state ={category:"", difficulty:""}
   }
 
   handleSelect = (formValue) => {
@@ -25,9 +25,6 @@ class App extends Component {
   
 
   render() {
-
-    //todo: let game = this.state.category ? 
-
     return (
       <div className="App">
       <div>

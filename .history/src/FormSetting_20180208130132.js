@@ -18,7 +18,7 @@ class FormSetting extends Component {
   }
 
   startGame(e) {
-    
+    e.preventDefault();
     this.props.handleSelect(this.state);
   }
 

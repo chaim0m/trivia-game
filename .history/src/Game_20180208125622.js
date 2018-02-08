@@ -11,7 +11,7 @@ export default class Game extends Component {
         this.handleAnswer = this.handleAnswer.bind(this)
         this.showQuestion = this.showQuestion.bind(this)
         this.state={
-            questions: [],
+            questions:[],
         }
     }
 
@@ -30,7 +30,7 @@ export default class Game extends Component {
     }
 
 
-    getQuestionsApi(category, difficulty){
+    /* getQuestionsApi(category, difficulty){
 
         var url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
     
@@ -47,12 +47,12 @@ export default class Game extends Component {
         .catch(error => {
             console.log('Nope it aint workin', error);
         });
-    } 
+    } */
     
     render(){
         return (
             <div>
-                <QuestionBox question={this.state.selectedQuestion} handleAnswer={this.handleAnswer}/> 
+                <QuestionBox question={selectedQ} handleAnswer={this.handleAnswer}/> 
             </div>
         )
     }

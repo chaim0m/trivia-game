@@ -17,34 +17,32 @@ class FormSetting extends Component {
     this.setState({ difficulty: event.target.value })
   }
 
-  startGame(e) {
-    
+  startGame() {
     this.props.handleSelect(this.state);
-  }
 
+  }
   render() {
     return (
       <form>
         Category:
       <select onChange={this.handleSelectVal}>
           <option>-- Select Category --</option>
-          <option value="9" name="category">General knowledge</option>
-          <option value="12" name="category">Music</option>
-          <option value="14" name="category">Television</option>
-          <option value="11" name="category">Film</option>
-          <option value="21" name="category">Sports</option>
-          <option value="24" name="category">Politics</option>
-          <option value="23" name="category">History</option>
-          <option value="22" name="category">Geography</option>
+          <option value="9" id="category">General knowledge</option>
+          <option value="12" id="category">Music</option>
+          <option value="14" id="category">Television</option>
+          <option value="11" id="category">Film</option>
+          <option value="21" id="category">Sports</option>
+          <option value="24" id="category">Politics</option>
+          <option value="23" id="category">History</option>
+          <option value="22" id="category">Geography</option>
         </select>
         Difficulty:
         <select onChange={this.handleSelectDiff}>
-          <option>-- Select Difficulty --</option>
-          <option value="Easy" name="difficulty">Easy</option>
-          <option value="Medium" name="difficulty">Medium</option>
-          <option value="Hard" name="difficulty">Hard</option>
+          <option value="Easy" id="difficulty">Easy</option>
+          <option value="Medium" id="difficulty">Medium</option>
+          <option value="Hard" id="difficulty">Hard</option>
         </select>
-        <button type="button" onClick={this.startGame}>Start Game</button>
+        <button type="submit" onClick={this.startGame}>Start Game</button>
       </form>
     );
   }

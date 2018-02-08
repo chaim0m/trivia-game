@@ -18,7 +18,7 @@ class FormSetting extends Component {
   }
 
   startGame(e) {
-    
+    e.preventDefault();
     this.props.handleSelect(this.state);
   }
 
@@ -44,7 +44,7 @@ class FormSetting extends Component {
           <option value="Medium" name="difficulty">Medium</option>
           <option value="Hard" name="difficulty">Hard</option>
         </select>
-        <button type="button" onClick={this.startGame}>Start Game</button>
+        <button type="submit" onClick={this.startGame}>Start Game</button>
       </form>
     );
   }

@@ -11,7 +11,7 @@ export default class Game extends Component {
         this.handleAnswer = this.handleAnswer.bind(this)
         this.showQuestion = this.showQuestion.bind(this)
         this.state={
-            questions: [],
+            questions:[],
         }
     }
 
@@ -19,6 +19,7 @@ export default class Game extends Component {
     }
     
     componentDidUpdate(prevProps, prevState){
+        this.getQuestionsApi(this.props.category, this.props.difficulty);
     }
 
     showQuestion() {
@@ -37,22 +38,23 @@ export default class Game extends Component {
         axios.get(url)
         .then(response => {
             console.log(response)
-            let questions = response.data.results;
-            questions.forEach((item) => {
-                item.displayQ = false
-            });
+            let questions = response;
+            for (let question of questions){
+                question.displayQ = false;
+            }
             questions[0].displayQ = true;
             this.setState((prevState) => {questions: prevState.questions.push(questions)});
         })
         .catch(error => {
             console.log('Nope it aint workin', error);
         });
-    } 
+    }
     
     render(){
+        let selectedQ = this.showQuestion(this.state.questions)
         return (
             <div>
-                <QuestionBox question={this.state.selectedQuestion} handleAnswer={this.handleAnswer}/> 
+                <QuestionBox question={selectedQ} handleAnswer={this.handleAnswer}/> 
             </div>
         )
     }

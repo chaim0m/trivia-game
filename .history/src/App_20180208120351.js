@@ -8,31 +8,20 @@ import FormSetting from './FormSetting';
 class App extends Component {
   constructor(props){
     super(props)
-    this.state ={category:null, difficulty:null}
+    this.state={category:"", difficulty:""}
   }
-
   handleSelect = (formValue) => {
     this.setState(formValue)
   }
 
-/*   componentDidUpdate(prevProps, prevState){
-    if (prevState !== this.state){
-        this.getQuestionsApi(this.state.category, this.state.difficulty);
-    }
-} */
-
-
   
 
   render() {
-
-    //todo: let game = this.state.category ? 
-
     return (
       <div className="App">
       <div>
       <FormSetting handleSelect={this.handleSelect}/>
-      <Game {...state}/>
+      <Game category={this.state.category} difficulty={this.state.difficulty}/>
       </div>
 
 
