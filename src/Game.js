@@ -13,20 +13,19 @@ export default class Game extends Component {
             questions:[]
         }
     }
-
-    // componentDidMount(){
-    //     getQuestionsApi(this.props.category, this.props.difficulty);
-    // }
-
+    componentDidMount(){
+        this.getQuestionsApi(this.props.category, this.props.difficulty);
+        
+    }
     getQuestionsApi(category, difficulty){
 
         var url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
     
         axios.get(url)
-        .then(questions => {
-            console.log(questions);
-            // let answers = questions.data.incorrect_answers;
-            // let temp = 
+        .then(response => {
+            let questions = response;
+            questions.forEach((item) => item.displayQ = false);
+            questions[0].displayQ = true;
             this.setState({questions: questions});
         })
 
@@ -39,13 +38,12 @@ export default class Game extends Component {
     renderQnA() {
         return(
             <div> 
-            <QuestionsList questions={this.state.questions}/>
-            
+            <QuestionBox question={this.state.questions}/> 
             </div>
         )
     }
     render(){
-        this.getQuestionsApi(this.props.category, this.props.difficulty)
+        // this.getQuestionsApi(this.props.category, this.props.difficulty)
         return (
             <div>
                 {this.renderQnA()}
@@ -53,18 +51,3 @@ export default class Game extends Component {
         )
     }
 }
-
-
-
-const CATEGORY_CODES = {
-    'General Knowledge': 9,
-    'Music': 12,
-    'Television': 14,
-    'Film': 11,
-    'Politics': 24,
-    'History': 23,
-    'Sports': 21,
-    'Geography': 22
-}
-
-const DIFFICULTY_CODE = ['easy', 'medium', 'hard'];
