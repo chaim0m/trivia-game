@@ -39,7 +39,7 @@ export default class Game extends Component {
     renderQnA() {
         return(
             <div> 
-            <QuestionBox questions={this.state.questions}/>
+            <QuestionsList questions={this.state.questions}/>
             
             </div>
         )
