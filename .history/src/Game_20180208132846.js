@@ -16,7 +16,7 @@ export default class Game extends Component {
     }
 
     componentDidMount(){
-        this.getQuestionsApi(this.props.category, this.props.difficulty);
+        getQuestionsApi(props.category, props.difficulty);
     }
     
     componentDidUpdate(prevProps, prevState){

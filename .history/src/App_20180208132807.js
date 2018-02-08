@@ -15,14 +15,28 @@ class App extends Component {
     this.setState(formValue)
   }
 
+/*   componentDidUpdate(prevProps, prevState){
+    if (prevState !== this.state){
+        this.getQuestionsApi(this.state.category, this.state.difficulty);
+    }
+} */
+
+
+  
+
   render() {
 
-    let game = this.state.category ? (<Game {...this.state} />) : null;
+    let game = this.state.category ? (<Game {...state} />) : null;
 
     return (
+      <div className="App">
+      <input type="text" id="user" value={this.state.name}/>
       <div>
-        <FormSetting handleSelect={this.handleSelect}/>
-        {game}
+      <FormSetting handleSelect={this.handleSelect}/>
+      {game}
+      </div>
+
+
       </div>
     );
   }

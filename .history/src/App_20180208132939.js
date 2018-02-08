@@ -20,9 +20,14 @@ class App extends Component {
     let game = this.state.category ? (<Game {...this.state} />) : null;
 
     return (
+      <div className="App">
+      <input type="text" id="user" value={this.state.name}/>
       <div>
-        <FormSetting handleSelect={this.handleSelect}/>
-        {game}
+      <FormSetting handleSelect={this.handleSelect}/>
+      {game}
+      </div>
+
+
       </div>
     );
   }
