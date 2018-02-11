@@ -2,7 +2,7 @@
 .hex-option {
   position: relative;
   display: block;
-  background: transparent;
+  background: white;
   width: 300px;
   height: 80px;
   line-height: 80px;
@@ -10,7 +10,7 @@
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #e04e5e;
+  color: #0C2C8D;
   margin: 40px auto;
   font-family: Helvetica, Arial, sans-serif;
   box-sizing: border-box;
@@ -20,7 +20,7 @@
 .hex-question {
   position: relative;
   display: block;
-  background: transparent;
+  background-color:white ;
   width: 1000px;
   height: 80px;
   line-height: 80px;
@@ -28,7 +28,7 @@
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #e04e5e;
+  color: #0C2C8D;
   margin: 40px auto;
   font-family: Helvetica, Arial, sans-serif;
   box-sizing: border-box;
@@ -166,3 +166,12 @@
             transform: scale(1);
   }
 }
+
+/* form setting */
+
+.formSetting {
+  text-align: center;
+  color: white
+}
+
+/* question box */
