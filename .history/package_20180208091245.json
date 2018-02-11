@@ -1,0 +1,26 @@
+{
+  "name": "trivia",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+<<<<<<< HEAD
+    "axios": "^0.17.1",
+=======
+    "bootstrap3": "^3.3.5",
+>>>>>>> 8c83ab657eb700520a8c6f77950acde678cf2d40
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
