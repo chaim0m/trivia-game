@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'bootstrap3/dist/css/bootstrap.css';
+import '/bootstrap3/dist/css/bootstrap.css';
 
 
 class FormSetting extends Component {

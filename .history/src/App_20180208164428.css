@@ -7,7 +7,7 @@
   height: 80px;
   line-height: 80px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
   color: #0C2C8D;
@@ -39,14 +39,6 @@
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-}
-.hex-question:hover {
-  cursor: default;
-}
-
-.hex-option:hover {
-  cursor: pointer;
-  background-color: burlywood;
 }
 /* Rotating Gears Animation */
 .rotating-gears {

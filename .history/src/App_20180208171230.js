@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import 'bootstrap3/dist/css/bootstrap.css';
+import '/bootstrap3/dist/css/bootstrap.css';
 import QuestionBox from './QuestionBox.js';
 import AnswerBox from './AnswerBox.js';
 import Game from './Game.js';
