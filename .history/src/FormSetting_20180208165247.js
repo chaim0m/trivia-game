@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import 'bootstrap3/dist/css/bootstrap.css';
-
 
 class FormSetting extends Component {
   constructor(props) {
@@ -53,7 +51,7 @@ class FormSetting extends Component {
             </select>
             </div>
           <div className="form-group">
-            <button type="button" className="btn btn-success" onClick={this.startGame}>Start Game</button>
+            <button type="button" className="btn-btn-success" onClick={this.startGame}>Start Game</button>
           </div>
         </form>
       );

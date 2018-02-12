@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import 'bootstrap3/dist/css/bootstrap.css';
-
 
 class FormSetting extends Component {
   constructor(props) {
@@ -27,11 +25,11 @@ class FormSetting extends Component {
   render() {
     if (this.state.show) {
       return (
-        <form className="formSetting">
+        <form class="formSetting">
           <div>
             <h1>Trivia</h1>
           </div>
-          <div className="form-group">
+          <div class="form-group">
             <label for="category">Category</label>
             <select className="form-control" id="category" onChange={this.handleSelectVal}>
               <option>-- Select Category --</option>
@@ -44,6 +42,8 @@ class FormSetting extends Component {
               <option value="23" name="category">History</option>
               <option value="22" name="category">Geography</option>
             </select>
+          </div>
+          <div class="form-group">
             <label for="difficulty">Difficulty</label>
             <select className="form-control" id="difficulty" onChange={this.handleSelectDiff}>
               <option>-- Select Difficulty --</option>
@@ -51,9 +51,9 @@ class FormSetting extends Component {
               <option value="medium" name="difficulty">Medium</option>
               <option value="hard" name="difficulty">Hard</option>
             </select>
-            </div>
-          <div className="form-group">
-            <button type="button" className="btn btn-success" onClick={this.startGame}>Start Game</button>
+          </div>
+          <div class="form-group">
+            <button type="button" onClick={this.startGame}>Start Game</button>
           </div>
         </form>
       );

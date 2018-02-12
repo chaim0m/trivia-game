@@ -40,9 +40,6 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.hex-question:hover {
-  cursor: default;
-}
 
 .hex-option:hover {
   cursor: pointer;
