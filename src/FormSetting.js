@@ -32,7 +32,7 @@ class FormSetting extends Component {
             <h1>Trivia</h1>
           </div>
           <div className="form-group">
-            <label for="category">Category</label>
+            <label htmlFor="category">Category</label>
             <select className="form-control" id="category" onChange={this.handleSelectVal}>
               <option>-- Select Category --</option>
               <option value="9" name="category">General knowledge</option>
@@ -44,7 +44,7 @@ class FormSetting extends Component {
               <option value="23" name="category">History</option>
               <option value="22" name="category">Geography</option>
             </select>
-            <label for="difficulty">Difficulty</label>
+            <label htmlFor="difficulty">Difficulty</label>
             <select className="form-control" id="difficulty" onChange={this.handleSelectDiff}>
               <option>-- Select Difficulty --</option>
               <option value="easy" name="difficulty">Easy</option>
