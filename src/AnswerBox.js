@@ -4,18 +4,15 @@ export default class AnswerBox extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this)
-        // this.shuffle = this.shuffle.bind(this)
-        this.state = {
-            data: this.props
-        }
+        this.shuffle = this.shuffle.bind(this)
     }
     
     handleClick(e) {
         console.log(e.target);
         console.log(e.target.innerHTML);
-        console.log(this.state.data.answers);
+        console.log(this.props.answers);
                 let pickedAnswer = e.target.innerHTML;
-                let allAnswers = this.state.data.answers;
+                let allAnswers = this.props.answers;
         for (let answer of allAnswers ){
             if (answer.isCorrect){
                 if(answer.value==pickedAnswer){
@@ -35,25 +32,25 @@ export default class AnswerBox extends Component {
     }
 
     componentDidMount() {
-/*         let shuffled = this.shuffle(this.props.answers)
-        this.setState({ answers: shuffled }); */
+        let shuffled = this.shuffle(this.props.answers)
+        this.setState({ answers: shuffled });
     }
 
-    // shuffle(array) {
-    //     let currentIndex = array.length, temporaryValue, randomIndex;
+    shuffle(array) {
+        let currentIndex = array.length, temporaryValue, randomIndex;
 
-    //     while (0 !== currentIndex) {
+        while (0 !== currentIndex) {
 
-    //         randomIndex = Math.floor(Math.random() * currentIndex);
-    //         currentIndex -= 1;
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
 
-    //         temporaryValue = array[currentIndex];
-    //         array[currentIndex] = array[randomIndex];
-    //         array[randomIndex] = temporaryValue;
-    //     }
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
 
-    //     return array;
-    // }
+        return array;
+    }
     render() {
         return (
             <div className="answer-container">
