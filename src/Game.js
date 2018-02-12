@@ -75,10 +75,5 @@ export default class Game extends Component {
                 <div class="sk-circle12 sk-child"></div>
             </div>
         }
-        return (
-            <div>
-                {questionBox}
-            </div>
-        )
     }
 }

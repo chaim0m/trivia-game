@@ -5,16 +5,20 @@ export default class AnswerBox extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this)
         this.shuffle = this.shuffle.bind(this)
+        this.state = {
+            answers: this.props.item
+        }
     }
-
+    
     handleClick(e) {
         console.log(e.target);
-        if (e.target.item.isCorrect){
-            e.target.className = "hex-option border green"
-        } else {
-            e.target.className = "hex-option border red"
-        }
-        this.props.handleClick(e.target.item.isCorrect)
+        console.log(e.target.value);
+        // if (e.target.props.item.isCorrect){
+        //     e.target.className = "hex-option border green"
+        // } else {
+        //     e.target.className = "hex-option border red"
+        // }
+        // this.props.handleClick(e.target.item.isCorrect)
     }
 
     componentDidMount() {
@@ -22,21 +26,21 @@ export default class AnswerBox extends Component {
         this.setState({ answers: shuffled }); */
     }
 
-    shuffle(array) {
-        let currentIndex = array.length, temporaryValue, randomIndex;
+    // shuffle(array) {
+    //     let currentIndex = array.length, temporaryValue, randomIndex;
 
-        while (0 !== currentIndex) {
+    //     while (0 !== currentIndex) {
 
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
+    //         randomIndex = Math.floor(Math.random() * currentIndex);
+    //         currentIndex -= 1;
 
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
+    //         temporaryValue = array[currentIndex];
+    //         array[currentIndex] = array[randomIndex];
+    //         array[randomIndex] = temporaryValue;
+    //     }
 
-        return array;
-    }
+    //     return array;
+    // }
     render() {
         return (
             <div className="answer-container">
